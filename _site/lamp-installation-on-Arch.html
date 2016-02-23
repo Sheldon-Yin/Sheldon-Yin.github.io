@@ -175,44 +175,44 @@ Here i show you the simple steps to install LAMP on your Arch System:</p>
 <p>Install php,php-apache,apache and mariadb:
 (note: use your favorite text editor, am using “gedit”)</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">$ sudo Pacman -S php-apache apache mariadb</code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">sudo</span> <span class="no">Pacman</span> <span class="o">-</span><span class="no">S</span> <span class="n">php</span><span class="o">-</span><span class="n">apache</span> <span class="n">apache</span> <span class="n">mariadb</span></code></pre></figure>
 
 <p>Now configure apache:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">$ sudo gedit /etc/httpd/conf/httpd.conf 
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">sudo</span> <span class="n">gedit</span> <span class="sr">/etc/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">httpd</span><span class="p">.</span><span class="nf">conf</span> 
 
-#&gt; comment the line .i.e. put a # before it.
+<span class="c1">#&gt; comment the line .i.e. put a # before it.</span>
 
-LoadModule unique_id_module modules/mod_unique_id.so
+<span class="no">LoadModule</span> <span class="n">unique_id_module</span> <span class="n">modules</span><span class="o">/</span><span class="n">mod_unique_id</span><span class="p">.</span><span class="nf">so</span>
 
-#&gt; restart apache
+<span class="c1">#&gt; restart apache</span>
 
-$ sudo systemctl restart httpd</code></pre></figure>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">restart</span> <span class="n">httpd</span></code></pre></figure>
 
 <p>then configure mariadb:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">$ sudo systemctl start mysqld
-$ sudo mysql_secure_installation
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">start</span> <span class="n">mysqld</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">mysql_secure_installation</span>
 
-#&gt; press enter and then &quot;yes&quot; to all.</code></pre></figure>
+<span class="c1">#&gt; press enter and then "yes" to all.</span></code></pre></figure>
 
 <p>Lastly configure php and php-apache:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">$ sudo gedit /etc/httpd/conf/httpd.conf
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">sudo</span> <span class="n">gedit</span> <span class="sr">/etc/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">httpd</span><span class="p">.</span><span class="nf">conf</span>
 
-#&gt; add the following lines at the end of the files
+<span class="c1">#&gt; add the following lines at the end of the files</span>
 
-LoadModule php5_module modules/libphp5.so 
-AddHandler php5-script php 
-Include conf/extra/php5_module.conf
+<span class="no">LoadModule</span> <span class="n">php5_module</span> <span class="n">modules</span><span class="o">/</span><span class="n">libphp5</span><span class="p">.</span><span class="nf">so</span> 
+<span class="no">AddHandler</span> <span class="n">php5</span><span class="o">-</span><span class="n">script</span> <span class="n">php</span> 
+<span class="no">Include</span> <span class="n">conf</span><span class="o">/</span><span class="n">extra</span><span class="o">/</span><span class="n">php5_module</span><span class="p">.</span><span class="nf">conf</span>
 
-#&gt; save and exit .
+<span class="c1">#&gt; save and exit .</span>
 
-$ sudo gedit /srv/http/info.php
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">gedit</span> <span class="sr">/srv/</span><span class="n">http</span><span class="o">/</span><span class="n">info</span><span class="p">.</span><span class="nf">php</span>
 
-#&gt; add this in your php file:
+<span class="c1">#&gt; add this in your php file:</span>
 
-&lt;?php phpinfo(); ?&gt;</code></pre></figure>
+<span class="o">&lt;</span><span class="p">?</span><span class="n">php</span> <span class="n">phpinfo</span><span class="p">();</span> <span class="sc">?&gt;</span></code></pre></figure>
 
 <p>finally, restart apache and all is done.enjoy!</p>
 
