@@ -17,6 +17,8 @@ tags_path : tags.html
 
 BASE_PATH : http://www.sheldonyin.website
 
+abouturl: /about/
+
 
 title : 望蜀得陇的空间
 
