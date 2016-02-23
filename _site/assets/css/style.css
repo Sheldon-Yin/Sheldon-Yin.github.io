@@ -11,7 +11,7 @@ body{
     z-index: 4;
 }
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
 
 .navbar-brand{
 
@@ -25,11 +25,11 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
 }
 
 .author-bio{
-font-family: 'Raleway', sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
 
 .author-name{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .page-header {
@@ -62,7 +62,7 @@ article {
 }
 
 #article_body{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: large;
 }
 
@@ -98,7 +98,7 @@ footer {
 }
 
 .sidebar-header .title a{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
 	color: inherit;
 	outline: none;
@@ -111,7 +111,7 @@ footer {
 }
 
 .title{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 45px;
 	text-shadow:0 0 5px #000;
 }
