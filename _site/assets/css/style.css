@@ -11,7 +11,7 @@ body{
     z-index: 4;
 }
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif; }
 
 .navbar-brand{
 
@@ -25,11 +25,11 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
 }
 
 .author-bio{
-font-family: 'Montserrat', sans-serif;
+font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
 }
 
 .author-name{
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
 }
 
 .page-header {
@@ -62,7 +62,7 @@ article {
 }
 
 #article_body{
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
 	font-size: large;
 }
 
@@ -98,7 +98,7 @@ footer {
 }
 
 .sidebar-header .title a{
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
 	text-decoration: none;
 	color: inherit;
 	outline: none;
@@ -111,7 +111,7 @@ footer {
 }
 
 .title{
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
 	font-size: 45px;
 	text-shadow:0 0 5px #000;
 }
