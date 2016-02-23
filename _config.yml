@@ -15,20 +15,20 @@ gems: [jekyll-paginate]
 categories_path : categories.html
 tags_path : tags.html
 
-BASE_PATH : http://blog.ankanbiswas.in/uno-dbyll
+BASE_PATH : http://www.sheldonyin.website
 
 
-title : uno-dbyll
+title : 望蜀得陇的空间
 
 
 
 author:
-  name: Ankan Biswas
-  role: Jekyll Theme
-  email: support@ankanbiswas.in
-  github: talk2ankan
-  twitter: talk2ankan
-  facebook: talk2ankan
-  googleplus: +AnkanBiswasWorkspace
-  bio: "Simple, clean, responsive and stylist theme for jekyll. "
-  uno-dbyll: https://raw.githubusercontent.com/talk2ankan/uno-dbyll/gh-pages/uno-dbyll.png
+  name: Sheldon Yin
+  role: 安卓开发与前端开发爱好者
+  email: 383541990@qq.com
+  github: Sheldon-Yin
+  twitter: None
+  facebook: None
+  googleplus: None
+  bio: "Stay hungry, I am really hungry"
+  uno-dbyll: https://www.baidu.com
