@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>我的安卓开发笔记——Android程序结构——MVC结构</title>
+
+    
+    <meta name="description" content="我的安卓开发笔记01，Android开发，Android上应用MVC结构 望蜀得陇">
+    
+
+    <meta name="author" content="Sheldon Yin">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/syntax/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/font-awesome/css/font-awesome.min.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/talk2ankan/Sheldon-Yin/gh-pages/Sheldon-Yin.png">
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (window.location.href == "http://www.sheldonyin.website/") {
+                $("#sidebar").css({width: '100%'});
+                $("#btnblog").click(function () {
+                    $("#sidebar").animate({width: '33.3333%'}, 'slow');
+                });
+            }
+        });
+
+    </script>
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?40772bc4ac75b32db18f92b73439a732";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default visible-xs" role="navigation">
+
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarHeaderCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        
+        <a type="button" class="navbar-toggle nav-link" href="http://github.com/Sheldon-Yin">
+            <i class="fa fa-github"></i>
+        </a>
+        
+        
+        <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/None">
+            <i class="fa fa-twitter"></i>
+        </a>
+        
+        
+        <a type="button" class="navbar-toggle nav-link" href="mailto:383541990@qq.com">
+            <i class="fa fa-envelope"></i>
+        </a>
+        
+
+
+        <a class="navbar-brand" href="http://www.sheldonyin.website">
+            <img src="http://www.sheldonyin.website/sheldon.jpg" class="img-circle" style="height:35px;width:35px"/>
+            望蜀得陇的空间
+        </a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarHeaderCollapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.sheldonyin.website">Home</a>
+            </li>
+            <li><a href="http://www.sheldonyin.website/categories.html">Categories</a></li>
+            <li><a href="http://www.sheldonyin.website/tags.html">Tags</a></li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+</nav>
+
+<!-- nav-menu-dropdown -->
+<div class="btn-group hidden-xs" id="nav-menu">
+    <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown">
+        <i class="fa fa-bars"></i>
+    </button>
+    <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="http://www.sheldonyin.website"><i
+                class="fa fa-home"></i> Home</a></li>
+        <li><a href="http://www.sheldonyin.website/categories.html"><i class="fa fa-folder"></i> Categories</a></li>
+        <li><a href="http://www.sheldonyin.website/tags.html"><i class="fa fa-tags"></i> Tags</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-arrow-up"></i> Top of Page</a></li>
+    </ul>
+</div>
+
+<div class="col-sm-4 sidebar hidden-xs" id="sidebar">
+    <! -- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="http://www.sheldonyin.website">
+		<img src="http://www.sheldonyin.website/sheldon.jpg" class="img-circle" style="border-radius: 50%;
+border: 3px solid #FFF; height:150px;width:150px" />
+	</a>
+	<h3 class="title">
+        <a href="http://www.sheldonyin.website">望蜀得陇的空间</a>
+         <p style="font-size:20px;">安卓开发与前端开发爱好者</p>
+    </h3>
+    
+    <hr class="hr-line">
+<h3 class="title">
+         <p style="font-size:18px">Stay hungry, I am really hungry</p>
+    </h3>
+
+    <hr class="hr-line1">
+ <h3 class="title" style="font-size:30px;">
+ 
+       
+      <a type="button" class="social1" href="http://github.com/Sheldon-Yin">
+        <i class="fa fa-github"></i>
+      </a>
+      
+       
+      <a type="button" class="social2" href="http://twitter.com/None">
+        <i class="fa fa-twitter"></i>
+      </a>
+      
+     
+      
+      <a type="button" class="social3" href="mailto:383541990@qq.com">
+        <i class="fa fa-envelope"></i>
+      </a>
+      
+       <hr class="hr-line1">
+       <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnblog" href="http://www.sheldonyin.website/#blog">
+        <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">Blog</i>
+      </a>
+      </h3>
+
+</header>
+
+
+
+<! -- sidebar.html end -->
+
+</div>
+
+<div class="col-sm-8 col-sm-offset-4" id="container">
+    
+<div class="page-header">
+  <h1>我的安卓开发笔记——Android程序结构——MVC结构 </h1>
+</div>
+  
+<article>
+
+  <div class="col-sm-10">
+   <span class="post-date">
+     
+     February 
+     23rd,
+       
+     2016
+     <small style="text-transform:none">android01</small> 
+   </span>
+    <div class="article_body" id="article_body">
+    <h2 id="mvc">关于安卓开发中使用的程序架构——MVC结构</h2>
+
+<p>这一次的安卓开发，主要采用的架构是mvc模式的，在开发之前也稍微了解了一下mvp模式，感觉还不是特别熟悉，为了能够正常开发，同时自己的安卓开发经验不足，选用了在上次的云服务jsp网页项目中比较熟悉的mvc结构。</p>
+
+<p>接下来我通过会讲解我自己的程序来说明一下什么是MVC结构，那么首先先说说MVC的概念吧</p>
+
+<p><br /><br /></p>
+
+<h1 id="mvc-1">MVC结构，</h1>
+
+<blockquote>
+  <h3 id="mmodel">M是model，也就是对象模型，这种对象往往是一个抽象概念，不具体，但已经包含了对象最关键的要素。</h3>
+</blockquote>
+
+<p>以一个教室为例，这个对象模型里面包含了学生和老师，还有桌椅，黑板等一些教学用具。</p>
+
+<blockquote>
+  <h3 id="vviewmodel">V是view，也就是视图，可以说是为抽象的model铺上的一层皮肤。</h3>
+</blockquote>
+
+<p>也就是关于学生、老师、教室里的所有东西长什么样子，摆放在哪里这样的一个结构层</p>
+
+<blockquote>
+  <h3 id="ccontrollerviewmodel">C是controller，也就是控制器，这一层需要负责业务逻辑，通过对view和model的操作，来实现我们想要的功能。</h3>
+</blockquote>
+
+<p>也就相当于老师要对学生上课，老师可以在黑板上写内容，学生坐在位置上听课等等，这样的逻辑和model的关系控制等等，由controller实现。</p>
+
+<p>这样做的一个好处就是，能够完美的分离了程序的几个逻辑块，避免这几个逻辑块的变动会殃及到各个地方，也保障了在一些大型项目中，每个人可以松耦合地去做不同的事情。哪怕项目比较小，也应该采用这样的模式，因为往往在项目不同的阶段，产品的需求也不一样。</p>
+
+<ul>
+  <li>例如一开始在产品需求不明确的时候，往往关心的是功能，而对于一些产品细节属性不能照顾到，这时候可以先对model做一个简单的架构。</li>
+  <li>之后会有UI完善界面，这时候产品的着重点会趋向于界面，就可以安心将view来写好。</li>
+  <li>后期一些用户交互的调整上往往会比较多，那么再去完善controller，而不需要再涉及到view的改动。</li>
+  <li>等到bugfix的阶段，各个方面都有可能出现问题，就需要根据不同的内容来进行修改。</li>
+</ul>
+
+<p><br /><br /></p>
+
+<p>在不同的业务阶段关注重点不同，后期bugfix的阶段也会有不同的问题出现。虽然说将内容分割成几块看似增加了程序的复杂程度，但是其实这个也是在程序的编写过程中，能够很好地适应需求改动的一种程序架构。</p>
+
+<p>先贴出我的程序结构图，供大家参考一下：</p>
+
+<p><img src="/assets/media/android-01.png" width="85%" /></p>
+
+<p>稍微解释一下，</p>
+
+<ul>
+  <li>adapter负责一个页面中有很多小块的页面拼装。属于controller的一个附属品。</li>
+  <li>common，是我自己用来记录程序中一些需要长久储存的东西，应该说是sharedpreferences，例如一些用户信息包括TOKEN，地理位置，操作记录等等。</li>
+  <li>activity就是一个界面，属于controller的一种</li>
+  <li>fragment属于是在一个界面里面，但是有很多的小分节，有点像微信底部的工具栏上面对应的4个界面，activity之间的界面跳转是全部跳转，但是fragment属于是页面的小分支跳转。不会刷新整个页面，我们也将会由专门的文章介绍。也是controller的一种</li>
+  <li>model就是一些模型对象，主要用于网络请求中，配合JSONparse数据，或者fastJSON获取数据，上面的这两种工具我也会有文章说明下。</li>
+  <li>network里面就主要是我和后台进行对接接口的api，封装了数据的获取和上传。</li>
+  <li>util里面放着我自己写的工具类，一般会封装好，可复用性强</li>
+  <li>view属于是一个特殊的东西，主要写了一些原生Android无法完成的东西，例如说横向的listview，还有圆形的头像，这个用的比较多，之后也会有文章介绍。</li>
+</ul>
+
+<p><br /><br /></p>
+
+<p>然后就是res文件夹下的东西了，这里面的东西就主要负责view也即是视图。</p>
+
+<ul>
+  <li>drawable主要放一些资源文件，图片什么的，音频什么的，还有一些自己写的xml文件，属于一个小视图的样式</li>
+  <li>layout这个是一些模板文件，所有的模板都会在这里出现，关于xml的写法，也会有文章介绍。</li>
+  <li>menu怎么说呢，没怎么用过，可能是我写的不是很规范吧。</li>
+  <li>mipmap主要是放icon的哦</li>
+  <li>value主要放一些字符串，颜色什么的，也会有一些style写在里面，这个style主要是一些样式，和drawable的样式有点像，不过会更抽象一些，属于一些属性，而drawable里面的xml本身就已经可以作为一个视图出现了</li>
+  <li>jniLibs主要是放库文件的，还有一些动态链接库</li>
+  <li>assets么，我在里面放了一些json，方便我自己程序调用，具体怎么用，就看你的了。当然也可以在这里放音频什么的。</li>
+</ul>
+
+<p><br /><br /></p>
+
+<p>接下来来看一下MVC的结构在Android具体程序代码中的体现吧。就以我代码中的一个功能，非常常见的关注过的用户列表为例，代码就采用我编写过的代码来说明，也欢迎各位在我代码不完善的地方，或者不简洁的地方多提意见。</p>
+
+<p>首先是model，关注这样的行为，在用户那边，想要看到关注者的名字、头像、年龄、关注时间。因此我们这个model主要是为了用来给view来显示的，同时需要对这个关注者进行操作，则需要知道关注者的id，因此我们的model就如下。</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">zjxswlkj</span><span class="o">.</span><span class="na">idletime</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gather</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">nickname</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">headImgUrl</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">age</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">date</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">userId</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">id</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>最上面的package是我的包名，这里相当于这个文件所在的位置。
+由于篇幅限制，我们这里就省去了一些getter和setter函数。</p>
+
+<p><br /><br /></p>
+
+<p>在有了model之后，我们就需要有与其显示相关的view，在Android中，这个view是由xml文件来承担的，当然还有一些视图上面的效果还需要controller来实现。这个有一点像html前端开发中css/html和js的关系。</p>
+
+<p>我们用来显示关注列表的视图如下：</p>
+
+<p>activiy_my_gather:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:background=</span><span class="s">"#000"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+        <span class="na">style=</span><span class="s">"@style/common_bar_layout"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;Button</span>
+            <span class="na">style=</span><span class="s">"@style/common_bar_back_button"</span>
+            <span class="na">android:background=</span><span class="s">"@drawable/back"</span>
+            <span class="na">android:id=</span><span class="s">"@+id/back_button"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/text_Titile"</span>
+            <span class="na">style=</span><span class="s">"@style/common_bar_textview"</span>
+            <span class="na">android:text=</span><span class="s">"@string/my_gather"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/RelativeLayout&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span> <span class="na">style=</span><span class="s">"@style/grey_single_line_nomatch"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;com.handmark.pulltorefresh.library.PullToRefreshListView</span> <span class="na">xmlns:ptr=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+        <span class="na">android:id=</span><span class="s">"@+id/list_view"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">ptr:ptrMode=</span><span class="s">"both"</span><span class="nt">&gt;&lt;/com.handmark.pulltorefresh.library.PullToRefreshListView&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></figure>
+
+<p><br /><br />
+而每一个关注的用户都是一个小块，需要显示在上面的listview中，
+item_gather_view:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+    <span class="na">android:background=</span><span class="s">"#000"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;com.zjxswlkj.idletime.view.RoundImageView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/user_photo"</span>
+            <span class="na">style=</span><span class="s">"@style/round_image_middle"</span>
+            <span class="na">android:layout_alignBottom=</span><span class="s">"@+id/user_brief"</span>
+            <span class="na">android:layout_centerVertical=</span><span class="s">"true"</span>
+            <span class="na">app:border_width=</span><span class="s">"1dp"</span>
+            <span class="na">app:border_color=</span><span class="s">"#ffffff"</span>
+            <span class="na">android:src=</span><span class="s">"@drawable/user"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/nickname"</span>
+            <span class="na">style=</span><span class="s">"@style/text_middle_white"</span>
+            <span class="na">android:layout_gravity=</span><span class="s">"center"</span>
+            <span class="na">android:layout_marginLeft=</span><span class="s">"12dp"</span>
+            <span class="na">android:layout_marginStart=</span><span class="s">"12dp"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/LinearLayout&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span>
+        <span class="na">style=</span><span class="s">"@style/grey_single_line_nomatch"</span><span class="nt">&gt;&lt;/LinearLayout&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></figure>
+
+<p>我们这里使用了pulltorefreshlistview来展示列表。代码可不必深究，我们这里主要说明这个程序的结构逻辑。总之上面的代码就是我们的视图代码。正如代码中所示，界面上会显示用户的照片和名称。关于年龄和时间，在后来的产品需求中去掉了，所以代码中也没有了。
+之后，我们的controller需要完成以下几个内容的工作：</p>
+
+<ul>
+  <li>从服务器获取数据</li>
+  <li>将数据显示到列表中</li>
+  <li>如果有进一步操作，还需要承担页面跳转等职责</li>
+</ul>
+
+<p><br /><br /></p>
+
+<p>这时候我们来看一下controller的代码：</p>
+
+<p>GatherMeActivity：</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatherMeActivity</span>  <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">PullToRefreshListView</span> <span class="n">pullToRefreshListView</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Gather</span><span class="o">&gt;</span> <span class="n">gathers</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_gather_me</span><span class="o">);</span>
+
+        <span class="n">Button</span> <span class="n">backButton</span> <span class="o">=</span> <span class="o">(</span><span class="n">Button</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">back_button</span><span class="o">);</span>
+        <span class="n">backButton</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+        <span class="n">pullToRefreshListView</span> <span class="o">=</span> <span class="o">(</span><span class="n">PullToRefreshListView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">list_view</span><span class="o">);</span>
+        <span class="n">getMyGather</span><span class="o">();</span>
+
+        <span class="n">pullToRefreshListView</span><span class="o">.</span><span class="na">setOnRefreshListener</span><span class="o">(</span><span class="k">new</span> <span class="n">PullToRefreshBase</span><span class="o">.</span><span class="na">OnRefreshListener2</span><span class="o">&lt;</span><span class="n">ListView</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPullDownToRefresh</span><span class="o">(</span><span class="n">PullToRefreshBase</span><span class="o">&lt;</span><span class="n">ListView</span><span class="o">&gt;</span> <span class="n">refreshView</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">getMyGather</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPullUpToRefresh</span><span class="o">(</span><span class="n">PullToRefreshBase</span><span class="o">&lt;</span><span class="n">ListView</span><span class="o">&gt;</span> <span class="n">refreshView</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">getMyGather</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="n">getMyGather</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">HttpUtils</span><span class="o">.</span><span class="na">fans</span><span class="o">(</span><span class="n">index</span><span class="o">,</span> <span class="k">new</span> <span class="n">HttpUtils</span><span class="o">.</span><span class="na">HttpResponse</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSuccess</span><span class="o">(</span><span class="n">String</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Gather</span><span class="o">&gt;</span> <span class="n">newGathers</span> <span class="o">=</span> <span class="n">JSON</span><span class="o">.</span><span class="na">parseObject</span><span class="o">(</span><span class="n">data</span><span class="o">,</span> <span class="k">new</span> <span class="n">TypeReference</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Gather</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
+                <span class="o">});</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">gathers</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">gathers</span> <span class="o">=</span> <span class="n">newGathers</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">gathers</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">newGathers</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">gathers</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+                <span class="n">GatherAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatherAdapter</span><span class="o">(</span><span class="n">GatherMeActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">gathers</span><span class="o">);</span>
+                <span class="n">pullToRefreshListView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+                <span class="n">pullToRefreshListView</span><span class="o">.</span><span class="na">onRefreshComplete</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onError</span><span class="o">(</span><span class="kt">int</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"error"</span><span class="o">,</span> <span class="n">errorMessage</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getId</span><span class="o">()){</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">back_button</span><span class="o">:</span>
+                <span class="n">finish</span><span class="o">();</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">default</span><span class="o">:</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>我们注意到几个业务逻辑相关的函数。onCreate负责初始化界面。getMyGather负责接收关注者的数据数组。由于使用了listview，所以我们需要adapter来接收数据，生成每一个小块的view后，再填到主列表界面中去。</p>
+
+<p>这里的网络传输，我封装了asycHttp还有gallery，以及最原生的http请求都有用到，在其他章节的网络请求中我们会再有介绍。这里不再赘述。</p>
+
+<p>有关于adapter，其实是controller中分离出去的一层逻辑，主要是用来拼装页面的，当然在其中也会有一些业务逻辑，主要是负责每一个独立视图块的用户交互。</p>
+
+<p>adapter在Android程序中使用的非常多，我们也会有文章再提及到。这里不再赘述。</p>
+
+<p><br /><br /><br /></p>
+
+<p>谢谢大家看到这里，也欢迎提出问题和建议。</p>
+
+<p>接下来的一章，我们会介绍有关Android程序代码编写规范的问题。</p>
+
+    </div>
+
+    
+    <ul class="tag_box list-unstyled list-inline">
+      <li><i class="fa fa-folder-open"></i></li>
+      
+      
+       
+        <li><a href="http://www.sheldonyin.website/categories.html#java-ref">
+          java <span>(1)</span>
+          
+        </a></li>
+      
+      
+    </ul>
+      
+
+    
+    <ul class="list-inline">
+      <li><i class="fa fa-tags"></i></li>
+      
+      
+       
+        <li>
+          <a href="http://www.sheldonyin.website/tags.html#android-ref">
+          android <span>(1)</span>
+          
+          </a>
+        </li>
+      
+      
+      
+    </ul>
+      
+
+    <hr>
+
+    <div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=我的安卓开发笔记——Android程序结构——MVC结构&via=None"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.sheldonyin.website/sheldon.jpg" style="height:100px;width:100px;" class="img-rounded author-image" />
+        <h4 class="section-title author-name"><b>望蜀得陇的空间</b><br/><p style="color:#888;font-size:13px;">安卓开发与前端开发爱好者</p></h4>
+        <p class="author-bio">Stay hungry, I am really hungry</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <ul class="pager">
+      
+      <li class="previous disabled"><a>&larr; Previous</a></li>
+      
+      
+      <li class="next disabled"><a>Next &rarr;</a>
+      
+    </ul>
+
+
+      <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="/android-01" data-title="我的安卓开发笔记——Android程序结构——MVC结构" data-url="http://www.sheldonyin.website/android-01"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+          var duoshuoQuery = {short_name:"sheldonyin"};
+          (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0]
+                      || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      <!-- 多说公共JS代码 end -->
+
+  </div>
+    
+    
+</article>
+<div class="clearfix"></div>
+
+
+    <footer class="navbar navbar-default">
+        <div class="container">
+            <p class="navbar-text pull-left">Some rights reserved &copy; 2016 Sheldon Yin. </br>
+                Created using <a class="navbar-button" href="https://github.com/twbs/bootstrap">Bootstrap3</a> and <a
+                        class="navbar-button" href="https://github.com/jekyll/jekyll">Jekyll</a>. Theme : <a
+                        class="navbar-button"
+                        href="https://github.com/Sheldon-Yin/Shledon-Yin.github.io">Sheldon-Yin</a></p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
