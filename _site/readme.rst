@@ -1,17 +1,17 @@
-**uno-dbyll theme**
+**Sheldon-Yin theme**
 ===============================
-Uno-dbyll is a simple, clean, responsive and stylist theme for jekyll.
+Sheldon-Yin is a simple, clean, responsive and stylist theme for jekyll.
 
 :Author: Ankan Biswas
 
 Snapshots - Desktop
 ---------------------------------------
 
-.. image:: uno-dbyll_00.png
+.. image:: Sheldon-Yin_00.png
 
-.. image:: uno-dbyll_01.png
+.. image:: Sheldon-Yin_01.png
 
-.. image:: uno-dbyll_02.png
+.. image:: Sheldon-Yin_02.png
 
 
 Copyright (c) 2013 Ankan Biswas
@@ -51,7 +51,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Read Me
 ---------------------------------------------------
 
-If you find my code is your thing, a link back to http://blog.ankanbiswas.in/uno-dbyll will really be appreciated.
+If you find my code is your thing, a link back to http://blog.ankanbiswas.in/Sheldon-Yin will really be appreciated.
 
 .. _İsmail_Demirbilek: https://github.com/dbtek
 .. _project: http://www.ankanbiswas.in
