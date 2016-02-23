@@ -15,7 +15,7 @@ gems: [jekyll-paginate]
 categories_path : categories.html
 tags_path : tags.html
 
-BASE_PATH : http://www.sheldonyin.website/
+BASE_PATH : http://www.sheldonyin.website
 
 
 title : 望蜀得陇的空间
