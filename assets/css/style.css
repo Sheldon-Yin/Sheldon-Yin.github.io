@@ -89,7 +89,7 @@ footer {
 	background-image: url("http://dl.bizhi.sogou.com/images/2012/02/14/252500.jpg");
 	background-size: 100% 100%;
 	color: #fff;
-	z-index: 5;
+	z-index: 20;
 	color: #fff;
 }
 
@@ -110,7 +110,7 @@ footer {
 
 #container{
     overflow: hidden;
-	z-index: 3;
+	z-index: 10;
     height: 100%;
 }
 

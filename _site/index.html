@@ -23,20 +23,6 @@
     <script src="/assets/js/jquery.pagepiling.min.js"></script>
     <script src="/assets/js/app.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            if (window.location.href == "http://www.sheldonyin.website/") {
-                $("#sidebar").css({width: '100%'});
-                $("#btnblog").click(function () {
-                    $("#sidebar").animate({width: '33.3333%'}, 'slow');
-                });
-            }
-        });
-
-    </script>
-
-
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -46,9 +32,6 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-
-
-
 </head>
 <body>
 
@@ -113,7 +96,7 @@
 
 <div class="col-sm-4 sidebar hidden-xs" id="sidebar">
     <! -- sidebar.html -->
-<header class="sidebar-header" role="banner">
+<header class="sidebar-header" role="banner" id="siderbar-header">
 	<a href="http://www.sheldonyin.website/">
 		<img src="http://7xr72k.com1.z0.glb.clouddn.com/sheldon.jpg" class="img-circle" style="border-radius: 50%;
 border: 3px solid #FFF; height:150px;width:150px" />
@@ -145,7 +128,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
       
        <hr class="hr-line1">
 
-     <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnabout" href="/about/">
+     <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " href="/about/">
          <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">About</i>
      </a>
 
