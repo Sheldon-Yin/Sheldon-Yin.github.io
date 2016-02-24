@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>我的安卓开发笔记——Android编程一些小规范——以及要注意的问题</title>
+
+    
+    <meta name="description" content="我的安卓开发笔记02，Android开发，Android上应用MVC结构 望蜀得陇">
+    
+
+    <meta name="author" content="Sheldon Yin">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="/assets/resources/syntax/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/font-awesome/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.js"></script>
+    <script src="/assets/js/jquery.pagepiling.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?40772bc4ac75b32db18f92b73439a732";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default visible-xs" id="navbarxs" role="navigation">
+
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarHeaderCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        
+        <a type="button" class="navbar-toggle nav-link" href="http://github.com/Sheldon-Yin">
+            <i class="fa fa-github"></i>
+        </a>
+        
+        
+        
+        <a type="button" class="navbar-toggle nav-link" href="mailto:383541990@qq.com">
+            <i class="fa fa-envelope"></i>
+        </a>
+        
+
+
+        <a class="navbar-brand" href="http://www.sheldonyin.website/">
+            <img src="http://7xr72k.com1.z0.glb.clouddn.com/sheldon.jpg" class="img-circle" style="height:35px;width:35px"/>
+            望蜀得陇
+        </a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarHeaderCollapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.sheldonyin.website/">Home</a>
+            </li>
+            <li><a href="http://www.sheldonyin.website//categories.html">Categories</a></li>
+            <li><a href="http://www.sheldonyin.website//tags.html">Tags</a></li>
+            <li><a href="/about/">about</a></li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+</nav>
+
+<!-- nav-menu-dropdown -->
+<div class="btn-group hidden-xs" id="nav-menu">
+    <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown">
+        <i class="fa fa-bars"></i>
+    </button>
+    <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="http://www.sheldonyin.website/"><i
+                class="fa fa-home"></i> Home</a></li>
+        <li><a href="http://www.sheldonyin.website//categories.html"><i class="fa fa-folder"></i> Categories</a></li>
+        <li><a href="http://www.sheldonyin.website//tags.html"><i class="fa fa-tags"></i> Tags</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-arrow-up"></i> Top of Page</a></li>
+    </ul>
+</div>
+
+<div class="col-sm-4 sidebar hidden-xs" id="sidebar">
+    <! -- sidebar.html -->
+<header class="sidebar-header" role="banner" id="siderbar-header">
+	<a href="http://www.sheldonyin.website/">
+		<img src="http://7xr72k.com1.z0.glb.clouddn.com/sheldon.jpg" class="img-circle" style="border-radius: 50%;
+border: 3px solid #FFF; height:150px;width:150px" />
+	</a>
+	<h3 class="title">
+        <a href="http://www.sheldonyin.website/">望蜀得陇</a>
+         <p style="font-size:20px;">安卓开发与前端开发爱好者</p>
+    </h3>
+    
+    <hr class="hr-line">
+<h3 class="title">
+         <p style="font-size:18px">Stay hungry, I am really hungry</p>
+    </h3>
+
+    <hr class="hr-line1">
+ <h3 class="title" style="font-size:30px;">
+ 
+       
+      <a type="button" class="social1" href="http://github.com/Sheldon-Yin">
+        <i class="fa fa-github"></i>
+      </a>
+      
+       
+     
+      
+      <a type="button" class="social3" href="mailto:383541990@qq.com">
+        <i class="fa fa-envelope"></i>
+      </a>
+      
+       <hr class="hr-line1">
+
+     <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " href="/about/">
+         <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">About</i>
+     </a>
+
+       <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnblog" href="http://www.sheldonyin.website//#blog">
+        <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">Blog</i>
+      </a>
+      </h3>
+
+</header>
+
+
+
+<! -- sidebar.html end -->
+
+</div>
+
+<div class="col-sm-8 col-sm-offset-4" id="container">
+    
+<div class="page-header">
+  <h1>我的安卓开发笔记——Android编程一些小规范——以及要注意的问题 </h1>
+</div>
+  
+<article>
+
+  <div class="col-sm-10">
+   <span class="post-date">
+     
+     February 
+     24th,
+     
+     2016
+     <small style="text-transform:none">android02</small> 
+   </span>
+    <div class="article_body" id="article_body">
+    <h1 id="section">关于安卓的命名规范和一些要注意的小细节</h1>
+
+<p>其实网络上相关的东西非常多，我感觉我都不用写什么了。</p>
+
+<p>不过还是写一点小心得，和我的一些习惯（哪怕不良，欢迎指出），仅供参考。</p>
+
+<p>先说一下自己的问题，这几个问题也干扰了我比较久，理应改掉：</p>
+
+<ol>
+  <li>其实我原来的命名规范比较不标准，为了自己的项目能够前后统一，最后就沿用了自己的命名规则，不过正确的命名规则却并非如此。</li>
+  <li>Android仅仅是一种应用形式，其代码本质是java，笔者在做Android之前并未学习过java语言，因此往往在一些基础上很容易犯一些错误。</li>
+  <li>在第三方库的引入上，笔者基本是有什么功能，就先整个引入了某个库，在代码整洁性和性能上，其实受到了不少的影响，后期维护上面也发现比较困难。</li>
+  <li>第三方文档读的少，甚至于使用某个功能并不读文档，直接使用，后面遇到什么问题再查，虽然这样做着速度快，但问题也不少。</li>
+  <li>运行调试的时候喜欢使用全速运行，这样出了问题，又得重新启动一次，应该多设断点，明晰自己的程序运行逻辑，确保没有问题了再去掉断点。</li>
+</ol>
+
+<p><br /></p>
+
+<p>接着来稍微说一下Android开发中，应该要注意的基础。哪怕有一些笔者也没有完全做到的（正在努力）。</p>
+
+<ol>
+  <li>代码中文件编码：</li>
+</ol>
+
+<p>文件编码要注意，使用utf-8，不使用中文注释的话没有关系，一旦使用，后期编译会报警告，尽管不影响运行，但是会使得后期查错变得困难。
+2. 标准的命名规范：</p>
+
+<p>正如上一篇中提到的，安卓中使用mvc模式结构，那么不同的文件，命名方法也是不同的。首先是文件命名:</p>
+
+<blockquote>
+  <ul>
+    <li>layout文件夹中的xml文件，命名应该为 <strong>layout_功能模块.xml</strong>，注意全部小写</li>
+    <li>actvity、utils、service等等的类文件，应该命名为 <strong>描述+类型.java</strong>（单词首字母大写），例如说我代码中的<strong>PeopleInfoActivity,PeopleCommentFragment,HttpUtil</strong>s等等，</li>
+    <li>还有一些小的控件，那就使用 <strong>view缩写_模块名称_view的功能</strong>来命名（全部小写），这一点笔者做得比较差，例如笔者用来做勾选的某个控件就叫做check_movie，正确的命名应该是<strong>chk_filter_movie</strong>，因为这个控件是用在筛选模块中做筛选选项的。</li>
+    <li>图片命名，静态的，使用<strong>前缀_模块</strong>，或者<strong>前缀_模块_描述</strong>。例如<strong>bg_main.png</strong>,或者<strong>btn_main_login.png</strong>；如果是动态的则在最后面还要加一个状态。例如<strong>bg_main_night.png,btn_main_login_p.png</strong>；
+<br />
+另外一定要注意，多种形态进行切换的，要使用selector,那就是使用xml，例如购买按钮的不同选中状态，那就命名为 <strong>view缩写_模块_功能.xml</strong>， 如 <strong>btn_date_buy.xm</strong>l，</li>
+  </ul>
+</blockquote>
+
+<p>另外还有有关文件中元素的命名：</p>
+
+<blockquote>
+  <ul>
+    <li>xml文件中id的命名，不必使用上述复杂规则，因为Android中频繁使用的findViewById指令，只在某指定的layout中去find。所以这些id建议直接根据意义来命名。例如说用户名，就使用user_name即可。当然，有些人习惯使用驼峰命名，都可以，这个根据个人喜好来。也有大牛说，使用驼峰命名法最好，因为这些id始终是要在java代码中调用绑定的。</li>
+    <li>字符串命名，一些在xml文件中使用的字符串，都要放到strings.xml中去统一管理，最好不要和title，dialog什么的混合使用，就按照意义，英文名即可。例如说确定，可以就命名为ok</li>
+    <li>类命名规则之前说过，和模块一样，都使用首字母全大写</li>
+    <li>接口，方法和变量的命名，则使用标准的驼峰命名法。一般的命名规则有，方法表示成一个动作。
+变量要展现出其类型和实际意义。还有有关状态变量，最好不要使用Flag。逻辑变量中要有Is，例如<strong>userIsCheck</strong></li>
+    <li>常量则全大写，然后通过”_“来分隔意义。一般常量要统一管理在一个地方。</li>
+  </ul>
+</blockquote>
+
+<p>有关于命名就讲到这里，主要这些规范是为了自己代码的可读性，还有与他人配合的过程中能够减少沟通成本而约定俗成的东西。并非没有其他类型的命名方法，而是说大家都遵守着同一套规范，没有对错之分，所以不必太纠结为什么这样不可以。非要纠结的话，自然也可以找到原因，万物都有其道理，也许因为某段历史，或者某个人的心血来潮，才导致了现在这种编程规范，也可能是某个组织的专家觉得这样好，这些都是后话，总之遵守这样的规范自然有其道理，代码的可读性，简洁性往往影响了一个人的代码质量，而代码质量会影响一个人的工资高低，好了，关于这点就讲到这里。关于命名内容比较多，大家可以在代码编写的过程中不断回顾这些内容。</p>
+
+<ol>
+  <li>不同的按钮状态应该使用selector，而不要再分离几个状态</li>
+  <li>引用第三方库要慎重</li>
+  <li>错误Log要带模块名称和接口名称，不能随便写</li>
+  <li>主UI线程不能被阻塞，要注意一些不重要的后台进程使用异步操作去做，例如gallery网络请求或者asycTask</li>
+  <li>图片bitmap是安卓性能的杀手，一定要对其有比较深的理解，在不需要的时候迅速解决掉，另外加载图片的时候也要注意，很多安卓卡顿原因就在于图片的加载问题上。同时，imageView如果来自网上，一定要异步加载。</li>
+  <li>请求要注意，gallery异步性能好，但是响应速度慢（亲测），大概再200ms左右，asyncHttp会快很多，在一些简单的请求情况下，建议不要使用gallery，会感觉有点慢</li>
+  <li>为了能够更好的适配，尽量使用dp来布局，同时要注意，不同的手机的dp宽度是不同的，在做一些均分分割的时候，不要写死dp，最好使用layout_weight和TableLayout来制作。更复杂一些的布局，使用relativeLayout，为了能够适配各种屏幕，最好在做之前规划一下布局，并不介意布局之间的嵌套，为了布局的稳定性和适配性，这些性能上的牺牲是应该的。</li>
+</ol>
+
+<p>待续…</p>
+
+<p>以后遇到什么问题就在此处记录了。</p>
+
+<p>下一篇我们写一下layout文件中的布局怎么写</p>
+
+    </div>
+
+    
+    <ul class="tag_box list-unstyled list-inline">
+      <li><i class="fa fa-folder-open"></i></li>
+      
+      
+       
+        <li><a href="http://www.sheldonyin.website//categories.html#java-ref">
+          java <span>(2)</span>
+          
+        </a></li>
+      
+      
+    </ul>
+      
+
+    
+    <ul class="list-inline">
+      <li><i class="fa fa-tags"></i></li>
+      
+      
+       
+        <li>
+          <a href="http://www.sheldonyin.website//tags.html#android-ref">
+          android <span>(2)</span>
+          
+          </a>
+        </li>
+      
+      
+      
+    </ul>
+      
+
+    <hr>
+
+    <div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=我的安卓开发笔记——Android编程一些小规范——以及要注意的问题"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://7xr72k.com1.z0.glb.clouddn.com/sheldon.jpg" style="height:100px;width:100px;" class="img-rounded author-image" />
+        <h4 class="section-title author-name"><b>望蜀得陇</b><br/><p style="color:#888;font-size:13px;">安卓开发与前端开发爱好者</p></h4>
+        <p class="author-bio">Stay hungry, I am really hungry</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://www.sheldonyin.website//android-01" title="我的安卓开发笔记——Android程序结构——MVC结构">&larr; Previous</a></li>
+      
+      
+      <li class="next disabled"><a>Next &rarr;</a>
+      
+    </ul>
+
+
+      <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="/android-02" data-title="我的安卓开发笔记——Android编程一些小规范——以及要注意的问题" data-url="http://www.sheldonyin.website//android-02"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+          var duoshuoQuery = {short_name:"sheldonyin"};
+          (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0]
+                      || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      <!-- 多说公共JS代码 end -->
+
+  </div>
+    
+    
+</article>
+<div class="clearfix"></div>
+
+
+    <footer class="navbar navbar-default">
+        <div class="container">
+            <p class="navbar-text pull-left">Some rights reserved &copy; 2016 Sheldon Yin. </br>
+                Created using <a class="navbar-button" href="https://github.com/twbs/bootstrap">Bootstrap3</a> and <a
+                        class="navbar-button" href="https://github.com/jekyll/jekyll">Jekyll</a>. Theme : <a
+                        class="navbar-button"
+                        href="https://github.com/Sheldon-Yin/Shledon-Yin.github.io">Sheldon-Yin</a></p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
