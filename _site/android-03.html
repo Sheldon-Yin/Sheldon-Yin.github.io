@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>我的安卓开发笔记——关于Layout布局的写法——以用户注册界面为例，来说一下Android界面的写法（1）</title>
+
+    
+    <meta name="description" content="我的安卓开发笔记03，Android开发，Android的Layout布局 望蜀得陇">
+    
+
+    <meta name="author" content="Sheldon Yin">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="/assets/resources/syntax/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/resources/font-awesome/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.js"></script>
+    <script src="/assets/js/jquery.pagepiling.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?40772bc4ac75b32db18f92b73439a732";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default visible-xs" id="navbarxs" role="navigation">
+
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarHeaderCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        
+        <a type="button" class="navbar-toggle nav-link" href="http://github.com/Sheldon-Yin">
+            <i class="fa fa-github"></i>
+        </a>
+        
+        
+        
+        <a type="button" class="navbar-toggle nav-link" href="mailto:383541990@qq.com">
+            <i class="fa fa-envelope"></i>
+        </a>
+        
+
+
+        <a class="navbar-brand" href="http://www.sheldonyin.website/">
+            <img src="http://7xr72k.com1.z0.glb.clouddn.com/sheldon.jpg" class="img-circle" style="height:35px;width:35px"/>
+            望蜀得陇
+        </a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarHeaderCollapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.sheldonyin.website/">Home</a>
+            </li>
+            <li><a href="http://www.sheldonyin.website//categories.html">Categories</a></li>
+            <li><a href="http://www.sheldonyin.website//tags.html">Tags</a></li>
+            <li><a href="/about/">about</a></li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+</nav>
+
+<!-- nav-menu-dropdown -->
+<div class="btn-group hidden-xs" id="nav-menu">
+    <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown">
+        <i class="fa fa-bars"></i>
+    </button>
+    <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="http://www.sheldonyin.website/"><i
+                class="fa fa-home"></i> Home</a></li>
+        <li><a href="http://www.sheldonyin.website//categories.html"><i class="fa fa-folder"></i> Categories</a></li>
+        <li><a href="http://www.sheldonyin.website//tags.html"><i class="fa fa-tags"></i> Tags</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-arrow-up"></i> Top of Page</a></li>
+    </ul>
+</div>
+
+<div class="col-sm-4 sidebar hidden-xs" id="sidebar">
+    <! -- sidebar.html -->
+<header class="sidebar-header" role="banner" id="siderbar-header">
+	<a href="http://www.sheldonyin.website/">
+		<img src="http://7xr72k.com1.z0.glb.clouddn.com/sheldon.jpg" class="img-circle" style="border-radius: 50%;
+border: 3px solid #FFF; height:150px;width:150px" />
+	</a>
+	<h3 class="title">
+        <a href="http://www.sheldonyin.website/">望蜀得陇</a>
+         <p style="font-size:20px;">安卓开发与前端开发爱好者</p>
+    </h3>
+    
+    <hr class="hr-line">
+<h3 class="title">
+         <p style="font-size:18px">Stay hungry, I am really hungry</p>
+    </h3>
+
+    <hr class="hr-line1">
+ <h3 class="title" style="font-size:30px;">
+ 
+       
+      <a type="button" class="social1" href="http://github.com/Sheldon-Yin">
+        <i class="fa fa-github"></i>
+      </a>
+      
+       
+     
+      
+      <a type="button" class="social3" href="mailto:383541990@qq.com">
+        <i class="fa fa-envelope"></i>
+      </a>
+      
+       <hr class="hr-line1">
+
+     <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " href="/about/">
+         <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">About</i>
+     </a>
+
+       <a type="button"  style="font-size:20px; padding:7px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnblog" href="http://www.sheldonyin.website//#blog">
+        <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">Blog</i>
+      </a>
+      </h3>
+
+</header>
+
+
+
+<! -- sidebar.html end -->
+
+</div>
+
+<div class="col-sm-8 col-sm-offset-4" id="container">
+    
+<div class="page-header">
+  <h1>我的安卓开发笔记——关于Layout布局的写法——以用户注册界面为例，来说一下Android界面的写法（1） </h1>
+</div>
+  
+<article>
+
+  <div class="col-sm-10">
+   <span class="post-date">
+     
+     February 
+     25th,
+     
+     2016
+     <small style="text-transform:none">android03</small> 
+   </span>
+    <div class="article_body" id="article_body">
+    <p>本系列结构：</p>
+
+<ol>
+  <li>展示用户注册界面</li>
+  <li>代码展示和代码结构</li>
+  <li>Android界面的实现的一些需要编写的要素</li>
+  <li>详细讲下各个layout的不同</li>
+  <li>讲一下Android常用的属性</li>
+  <li>讲一下Android常用的控件</li>
+  <li>讲一下Android自定义样式的控件写法</li>
+</ol>
+
+<p>本篇属于界面写法系列的第一个章节。主要讲一下我们要完成的1、用户注册界面，和2、部分代码展示。</p>
+
+<h2 id="section">1. 用户注册界面</h2>
+
+<p>我们首先来展示一下完成的页面的样子，</p>
+
+<p><img src="http://7xr72k.com1.z0.glb.clouddn.com/Android-03android-03-register.png" alt="image" />
+手机展示页面</p>
+
+<p>这个页面是一个比较简单的页面，算是中规中矩的页面。假设现在我们要去完成这样的页面，我们来解析一下应该使用什么样的布局。
+1. 考虑布局应该从外向内考虑，从左向右考虑。那么最外层也就是我们的背景层。由于内部是一个相对比较复杂的布局，我们不应该让里面的布局影响到外面，则最外层应该就是罩一层布局，里面再是单独的一层。
+2. 向内考虑，到里面的实体内容区，我们发现可以分为从上至下的四层，所以我们在里面再套一层从上到下的布局。
+3. 在每一层里面再考虑细节的做法，无论是从左到右，还是均等分布，都根据要求来写。</p>
+
+<p>然后根据上面的思路，在你的脑内应该有这样3幅图：</p>
+
+<p><img src="http://7xr72k.com1.z0.glb.clouddn.com/Android-03android-02-layout.jpg" alt="image" /></p>
+
+<p>图略丑，别介意。</p>
+
+<p>然后我们根据布局的安排，就可以写出代码的框架。</p>
+
+<p>有关写代码的顺序，最好按照脑中的架构顺序来写，这样可以避免出错，尽管这样不是线状的书写方式，但这依然是应该学习的写界面的思路。</p>
+
+<h2 id="section-1">2.代码展示</h2>
+
+<p>尽管觉得麻烦，不过还是先写一下外部框架的代码好了。</p>
+
+<h3 id="section-2">第一步：</h3>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/register_relative_layout"</span>
+    <span class="na">android:background=</span><span class="s">"@drawable/xsb_bg"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span>
+        <span class="na">android:id=</span><span class="s">"@+id/linearLayout"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
+        <span class="na">android:layout_centerVertical=</span><span class="s">"true"</span>
+        <span class="na">android:layout_margin=</span><span class="s">"40dp"</span>
+        <span class="na">android:background=</span><span class="s">"@drawable/corners_bg_black_another"</span>
+        <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/LinearLayout&gt;</span>
+
+<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></figure>
+
+<p>如图：<img src="http://7xr72k.com1.z0.glb.clouddn.com/Android-03android-03-register-01.png" alt="image" /></p>
+
+<p>这一步完成了图中的第一步，写了一个外部的relativeLayout和里面的linearLayout，关于样式，是我使用的自定义的控件样式，后面会介绍。</p>
+
+<h3 id="section-3">第二步：</h3>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/register_relative_layout"</span>
+    <span class="na">android:background=</span><span class="s">"@drawable/xsb_bg"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span>
+        <span class="na">android:id=</span><span class="s">"@+id/linearLayout"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
+        <span class="na">android:layout_centerVertical=</span><span class="s">"true"</span>
+        <span class="na">android:layout_margin=</span><span class="s">"40dp"</span>
+        <span class="na">android:background=</span><span class="s">"@drawable/corners_bg_black_another"</span>
+        <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+        
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span> <span class="na">style=</span><span class="s">"@style/grey_single_line"</span><span class="nt">&gt;&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span> <span class="na">style=</span><span class="s">"@style/grey_single_line"</span><span class="nt">&gt;&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+        
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/register"</span>
+            <span class="na">style=</span><span class="s">"@style/text_big_white"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="nt">/&gt;</span>
+        
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+    <span class="nt">&lt;/LinearLayout&gt;</span>
+<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></figure>
+
+<p>这一步完成了里面的4个从上到下的垂直布局，然后中间的注册按钮，我使用了textview，其实这样是不对的，最好是使用button，当然这个关系并不大，这样做主要是因为样式的关系，button有其自己的样式，text样式比较单纯。但是button的好处是点击状态等更容易配置想要的selector。</p>
+
+<h3 id="section-4">第三步：</h3>
+
+<p>这一步将那4个垂直布局中的水平布局提现出来，代码就不展示了。直接可以看后面的成品。另外说一点，一般水平布局和垂直布局是使用linearLayout的，而这种布局默认是水平布局的。</p>
+
+<p>以上的代码就是刚才我们布局思路的实现，之后的细节实现我们可以之后再考虑。做布局应该先在意布局，然后再不断修整细节，因为细节是比较细小而费精力的地方，但是布局是出错之后，细节再完美也没什么意义，先整体后局部的布局方法，和mvc模式的思路有点相似，把耗精力的事情分离开来做，千万不要在做一件事情的时候担心另外一件事情。</p>
+
+<p>换一种说法，外部布局完成后，内部细节的修改不会使得外部的布局产生错误，但是反过来设计却不一定。</p>
+
+<p>我们的代码是在不同阶段不断充实的，最后是我的整体代码（可以直接粘贴复制还是比较轻松）：</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/register_relative_layout"</span>
+    <span class="na">android:background=</span><span class="s">"@drawable/xsb_bg"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span>
+        <span class="na">android:id=</span><span class="s">"@+id/linearLayout"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
+        <span class="na">android:layout_centerVertical=</span><span class="s">"true"</span>
+        <span class="na">android:layout_margin=</span><span class="s">"40dp"</span>
+        <span class="na">android:background=</span><span class="s">"@drawable/corners_bg_black_another"</span>
+        <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:orientation=</span><span class="s">"horizontal"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;TextView</span>
+                <span class="na">style=</span><span class="s">"@style/text_middle_white"</span>
+                <span class="na">android:layout_margin=</span><span class="s">"16dp"</span>
+                <span class="na">android:text=</span><span class="s">"@string/phone_number"</span> <span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;android.support.design.widget.TextInputLayout</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:layout_marginRight=</span><span class="s">"16dp"</span>
+                <span class="na">android:textColorHint=</span><span class="s">"@color/material_grey_600"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;EditText</span>
+                    <span class="na">android:id=</span><span class="s">"@+id/phone_number_input"</span>
+                    <span class="na">android:inputType=</span><span class="s">"phone"</span>
+                    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                    <span class="na">android:textColor=</span><span class="s">"@color/white"</span>
+                    <span class="na">android:hint=</span><span class="s">"你的手机号码"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/android.support.design.widget.TextInputLayout&gt;</span>
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span> <span class="na">style=</span><span class="s">"@style/grey_single_line"</span><span class="nt">&gt;&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;TextView</span>
+                <span class="na">style=</span><span class="s">"@style/text_middle_white"</span>
+                <span class="na">android:layout_margin=</span><span class="s">"16dp"</span>
+                <span class="na">android:text=</span><span class="s">"@string/phone_message_number"</span> <span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;android.support.design.widget.TextInputLayout</span>
+                <span class="na">android:layout_width=</span><span class="s">"80dp"</span>
+                <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:layout_marginRight=</span><span class="s">"10dp"</span>
+                <span class="na">android:textColorHint=</span><span class="s">"@color/material_grey_600"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;EditText</span>
+                    <span class="na">android:id=</span><span class="s">"@+id/identify_code"</span>
+                    <span class="na">android:inputType=</span><span class="s">"number"</span>
+                    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                    <span class="na">android:textColor=</span><span class="s">"@color/white"</span>
+                    <span class="na">android:hint=</span><span class="s">"验证码"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/android.support.design.widget.TextInputLayout&gt;</span>
+
+            <span class="nt">&lt;TextView</span>
+                <span class="na">android:id=</span><span class="s">"@+id/get_identify_code_button"</span>
+                <span class="na">style=</span><span class="s">"@style/text_small_blue"</span>
+                <span class="na">android:layout_gravity=</span><span class="s">"center"</span>
+                <span class="na">android:text=</span><span class="s">"获取验证码"</span>
+                <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span> <span class="na">style=</span><span class="s">"@style/grey_single_line"</span><span class="nt">&gt;&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:orientation=</span><span class="s">"horizontal"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;TextView</span>
+                <span class="na">style=</span><span class="s">"@style/text_middle_white"</span>
+                <span class="na">android:layout_margin=</span><span class="s">"16dp"</span>
+                <span class="na">android:text=</span><span class="s">"@string/password"</span> <span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;android.support.design.widget.TextInputLayout</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:layout_marginLeft=</span><span class="s">"20dp"</span>
+                <span class="na">android:layout_marginRight=</span><span class="s">"16dp"</span>
+                <span class="na">android:textColorHint=</span><span class="s">"@color/material_grey_600"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;EditText</span>
+                    <span class="na">android:id=</span><span class="s">"@+id/password_input"</span>
+                    <span class="na">android:inputType=</span><span class="s">"textPassword"</span>
+                    <span class="na">android:hint=</span><span class="s">"填写密码"</span>
+                    <span class="na">android:textColor=</span><span class="s">"@color/white"</span>
+                    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                    <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/android.support.design.widget.TextInputLayout&gt;</span>
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/register"</span>
+            <span class="na">style=</span><span class="s">"@style/text_big_white"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:background=</span><span class="s">"#00A3E6"</span>
+            <span class="na">android:gravity=</span><span class="s">"center"</span>
+            <span class="na">android:paddingBottom=</span><span class="s">"16dp"</span>
+            <span class="na">android:paddingTop=</span><span class="s">"14dp"</span>
+            <span class="na">android:text=</span><span class="s">"@string/register"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;TextView</span>
+                <span class="na">android:id=</span><span class="s">"@+id/login"</span>
+                <span class="na">style=</span><span class="s">"@style/text_middle_white"</span>
+                <span class="na">android:layout_gravity=</span><span class="s">"end"</span>
+                <span class="na">android:padding=</span><span class="s">"16dp"</span>
+                <span class="na">android:text=</span><span class="s">"@string/login"</span> <span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;TextView</span>
+                <span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+                <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:layout_weight=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;TextView</span>
+                <span class="na">android:id=</span><span class="s">"@id/forget_password"</span>
+                <span class="na">style=</span><span class="s">"@style/text_middle_white"</span>
+                <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:gravity=</span><span class="s">"end"</span>
+                <span class="na">android:padding=</span><span class="s">"16dp"</span>
+                <span class="na">android:text=</span><span class="s">"@string/forget_password"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+
+    <span class="nt">&lt;/LinearLayout&gt;</span>
+
+<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></figure>
+
+<p>如其所示，一般的代码都是在不断充实中完善的。</p>
+
+<p>有关于里面的一些属性就不做过多介绍了，后面的章节会对几个常用布局和属性进行介绍。</p>
+
+<p>文章好像有点太长了，主要是代码太长了。</p>
+
+<p>剩下的内容，我们会放在Android界面写法系列中的另外几篇文章中去描述。</p>
+
+<h2 id="android">3. 说明下置于代码之上的Android界面实现结构</h2>
+
+<h2 id="layout">4. 介绍一下不同的layout和如何选用的问题</h2>
+
+<h2 id="android-1">5. 一些常用的Android属性</h2>
+
+<h2 id="android-2">6. 一些常用的Android组件</h2>
+
+<h2 id="android-3">7. 自定义的样式Android组件的写法</h2>
+
+<p>下一篇文章我们主要讲一下3.4两个章节。</p>
+
+<p>有关Android界面实现中，需要人为编写的要素，还有最重要的布局分类，和如何选用的问题。</p>
+
+<p>有任何问题可以发邮件给我，文章下方留言也可以，大家一起讨论（可能回复不会特别及时，请不要介意）</p>
+
+    </div>
+
+    
+    <ul class="tag_box list-unstyled list-inline">
+      <li><i class="fa fa-folder-open"></i></li>
+      
+      
+       
+        <li><a href="http://www.sheldonyin.website//categories.html#java-ref">
+          java <span>(3)</span>
+          
+        </a></li>
+      
+      
+    </ul>
+      
+
+    
+    <ul class="list-inline">
+      <li><i class="fa fa-tags"></i></li>
+      
+      
+       
+        <li>
+          <a href="http://www.sheldonyin.website//tags.html#android-ref">
+          android <span>(3)</span>
+          
+          </a>
+        </li>
+      
+      
+      
+    </ul>
+      
+
+    <hr>
+
+    <div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=我的安卓开发笔记——关于Layout布局的写法——以用户注册界面为例，来说一下Android界面的写法（1）"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://7xr72k.com1.z0.glb.clouddn.com/sheldon.jpg" style="height:100px;width:100px;" class="img-rounded author-image" />
+        <h4 class="section-title author-name"><b>望蜀得陇</b><br/><p style="color:#888;font-size:13px;">安卓开发与前端开发爱好者</p></h4>
+        <p class="author-bio">Stay hungry, I am really hungry</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://www.sheldonyin.website//android-02" title="我的安卓开发笔记——Android编程一些小规范——以及要注意的问题">&larr; Previous</a></li>
+      
+      
+      <li class="next disabled"><a>Next &rarr;</a>
+      
+    </ul>
+
+
+      <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="/android-03" data-title="我的安卓开发笔记——关于Layout布局的写法——以用户注册界面为例，来说一下Android界面的写法（1）" data-url="http://www.sheldonyin.website//android-03"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+          var duoshuoQuery = {short_name:"sheldonyin"};
+          (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0]
+                      || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      <!-- 多说公共JS代码 end -->
+
+  </div>
+    
+    
+</article>
+<div class="clearfix"></div>
+
+
+    <footer class="navbar navbar-default">
+        <div class="container">
+            <p class="navbar-text pull-left">Some rights reserved &copy; 2016 Sheldon Yin. </br>
+                Created using <a class="navbar-button" href="https://github.com/twbs/bootstrap">Bootstrap3</a> and <a
+                        class="navbar-button" href="https://github.com/jekyll/jekyll">Jekyll</a>. Theme : <a
+                        class="navbar-button"
+                        href="https://github.com/Sheldon-Yin/Shledon-Yin.github.io">Sheldon-Yin</a></p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
