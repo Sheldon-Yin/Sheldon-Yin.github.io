@@ -3,6 +3,11 @@
 body{
   overflow-X:hidden;
     line-height:2;
+    text-indent: 2em;
+}
+
+p{
+    margin-bottom: 1em;
 }
 
 #nav-menu{
