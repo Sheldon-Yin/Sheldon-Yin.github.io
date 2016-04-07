@@ -9,10 +9,9 @@
     
 
     <meta name="author" content="Sheldon Yin">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
     <link rel="stylesheet" type="text/css" href="/assets/resources/syntax/syntax.css">
     <link rel="stylesheet" type="text/css" href="/assets/resources/bootstrap/css/bootstrap.min.css">
@@ -214,7 +213,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
 
 <h3 id="section-2">第一步：</h3>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
@@ -232,7 +231,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
         <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/LinearLayout&gt;</span>
 
-<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></figure>
+<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></div>
 
 <p>如图：<img src="http://7xr72k.com1.z0.glb.clouddn.com/Android-03android-03-register-01.png" alt="image" /></p>
 
@@ -240,7 +239,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
 
 <h3 id="section-3">第二步：</h3>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
@@ -289,7 +288,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
         <span class="nt">&lt;/LinearLayout&gt;</span>
 
     <span class="nt">&lt;/LinearLayout&gt;</span>
-<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></figure>
+<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></div>
 
 <p>这一步完成了里面的4个从上到下的垂直布局，然后中间的注册按钮，我使用了textview，其实这样是不对的，最好是使用button，当然这个关系并不大，这样做主要是因为样式的关系，button有其自己的样式，text样式比较单纯。但是button的好处是点击状态等更容易配置想要的selector。</p>
 
@@ -303,7 +302,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
 
 <p>我们的代码是在不同阶段不断充实的，最后是我的整体代码（可以直接粘贴复制还是比较轻松）：</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
@@ -446,7 +445,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
 
     <span class="nt">&lt;/LinearLayout&gt;</span>
 
-<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></figure>
+<span class="nt">&lt;/RelativeLayout&gt;</span></code></pre></div>
 
 <p>如其所示，一般的代码都是在不断充实中完善的。</p>
 
@@ -543,7 +542,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
       <li class="previous"><a href="http://www.sheldonyin.website//android-02" title="我的安卓开发笔记——Android编程一些小规范——以及要注意的问题">&larr; Previous</a></li>
       
       
-      <li class="next disabled"><a>Next &rarr;</a>
+      <li class="next"><a href="http://www.sheldonyin.website//web-01" title="如何实现单行显示，多余的字用“...”代替">Next &rarr;</a></li>
       
     </ul>
 
@@ -574,7 +573,9 @@ border: 3px solid #FFF; height:150px;width:150px" />
 
     <footer class="navbar navbar-default">
         <div class="container">
-            <p class="navbar-text pull-left">Some rights reserved &copy; 2016 Sheldon Yin. </br>
+            <p class="navbar-text pull-left">Some rights reserved &copy; 
+                2016 
+                Sheldon Yin. </br>
                 Created using <a class="navbar-button" href="https://github.com/twbs/bootstrap">Bootstrap3</a> and <a
                         class="navbar-button" href="https://github.com/jekyll/jekyll">Jekyll</a>. Theme : <a
                         class="navbar-button"

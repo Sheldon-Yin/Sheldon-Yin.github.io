@@ -9,10 +9,9 @@
     
 
     <meta name="author" content="Sheldon Yin">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
     <link rel="stylesheet" type="text/css" href="/assets/resources/syntax/syntax.css">
     <link rel="stylesheet" type="text/css" href="/assets/resources/bootstrap/css/bootstrap.min.css">
@@ -250,7 +249,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
 
 <p>首先是model，关注这样的行为，在用户那边，想要看到关注者的名字、头像、年龄、关注时间。因此我们这个model主要是为了用来给view来显示的，同时需要对这个关注者进行操作，则需要知道关注者的id，因此我们的model就如下。</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">zjxswlkj</span><span class="o">.</span><span class="na">idletime</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">zjxswlkj</span><span class="o">.</span><span class="na">idletime</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gather</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">nickname</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">headImgUrl</span><span class="o">;</span>
@@ -258,7 +257,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
     <span class="kd">private</span> <span class="n">String</span> <span class="n">date</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">userId</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">id</span><span class="o">;</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span></code></pre></div>
 
 <p>最上面的package是我的包名，这里相当于这个文件所在的位置。
 由于篇幅限制，我们这里就省去了一些getter和setter函数。</p>
@@ -271,7 +270,7 @@ border: 3px solid #FFF; height:150px;width:150px" />
 
 <p>activiy_my_gather:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -302,13 +301,13 @@ border: 3px solid #FFF; height:150px;width:150px" />
         <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
         <span class="na">ptr:ptrMode=</span><span class="s">"both"</span><span class="nt">&gt;&lt;/com.handmark.pulltorefresh.library.PullToRefreshListView&gt;</span>
 
-<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></figure>
+<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></div>
 
 <p><br /><br />
 而每一个关注的用户都是一个小块，需要显示在上面的listview中，
 item_gather_view:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -342,7 +341,7 @@ item_gather_view:</p>
     <span class="nt">&lt;LinearLayout</span>
         <span class="na">style=</span><span class="s">"@style/grey_single_line_nomatch"</span><span class="nt">&gt;&lt;/LinearLayout&gt;</span>
 
-<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></figure>
+<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></div>
 
 <p>我们这里使用了pulltorefreshlistview来展示列表。代码可不必深究，我们这里主要说明这个程序的结构逻辑。总之上面的代码就是我们的视图代码。正如代码中所示，界面上会显示用户的照片和名称。关于年龄和时间，在后来的产品需求中去掉了，所以代码中也没有了。
 之后，我们的controller需要完成以下几个内容的工作：</p>
@@ -359,7 +358,7 @@ item_gather_view:</p>
 
 <p>GatherMeActivity：</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatherMeActivity</span>  <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatherMeActivity</span>  <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
@@ -423,7 +422,7 @@ item_gather_view:</p>
                 <span class="k">break</span><span class="o">;</span>
         <span class="o">}</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span></code></pre></div>
 
 <p>我们注意到几个业务逻辑相关的函数。onCreate负责初始化界面。getMyGather负责接收关注者的数据数组。由于使用了listview，所以我们需要adapter来接收数据，生成每一个小块的view后，再填到主列表界面中去。</p>
 
@@ -541,7 +540,9 @@ item_gather_view:</p>
 
     <footer class="navbar navbar-default">
         <div class="container">
-            <p class="navbar-text pull-left">Some rights reserved &copy; 2016 Sheldon Yin. </br>
+            <p class="navbar-text pull-left">Some rights reserved &copy; 
+                2016 
+                Sheldon Yin. </br>
                 Created using <a class="navbar-button" href="https://github.com/twbs/bootstrap">Bootstrap3</a> and <a
                         class="navbar-button" href="https://github.com/jekyll/jekyll">Jekyll</a>. Theme : <a
                         class="navbar-button"
