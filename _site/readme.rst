@@ -51,11 +51,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Read Me
 ---------------------------------------------------
 
-If you find my code is your thing, a link back to http://blog.ankanbiswas.in/Sheldon-Yin will really be appreciated.
+If you find my code is your thing, a link back to http://SheldonYin.website will really be appreciated.
 
-.. _İsmail_Demirbilek: https://github.com/dbtek
+.. _İsmail_Demirbilek: https://github.com/sheldon-yin
 .. _project: http://www.ankanbiswas.in
 .. _Jekyll: http://jekyllrb.com
 .. _reference: http://ismaildemirbilek.com
 .. _next-reference: http://daleanthony.com/
-.. _Dale-Anthony: https://github.com/daleanthony

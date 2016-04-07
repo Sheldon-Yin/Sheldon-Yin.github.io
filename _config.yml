@@ -3,6 +3,8 @@
 permalink: /:title
 # https://help.github.com/articles/migrating-your-pages-site-from-maruku
 markdown: kramdown
+kramdown:
+  input: GFM
 
 highlighter: rouge
 paginate: 20 # pagination based on number of posts
@@ -15,7 +17,7 @@ gems: [jekyll-paginate]
 categories_path : categories.html
 tags_path : tags.html
 
-BASE_PATH : http://www.sheldonyin.website
+BASE_PATH : http://localhost:4000
 
 abouturl: /about/
 
